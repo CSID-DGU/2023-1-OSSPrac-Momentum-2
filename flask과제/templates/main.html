@@ -10,7 +10,8 @@
         var Major=document.getElementById('major').value;
         var email_id=document.getElementById('email_id').value;
         var email_addr=document.getElementById('email_addr').value;
-
+        console.log(name, StudentNumber, Major, email_addr, email_id)
+        
         if (!name|| !StudentNumber || !Major || !email_id|| !email_addr){
             alert('필수 정보를 다 입력해주세요!');
             return false;
@@ -21,7 +22,7 @@
   </script>
 </head>
 <body>
-  <form method="POST" onsubmit="return validateForm()">
+  <form method="POST" action="/result" onsubmit="return validateForm()">
         
     <p><b>* Name</b> <input type="text" id='name'name="name"/> </p>
     <p><b>* Student Number</b> <input type="number" id='StudentNumber'name="student_number"/> </p>
