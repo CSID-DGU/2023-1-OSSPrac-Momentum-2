@@ -14,7 +14,8 @@ def result():
     email_id = request.form['email_id']
     email_addr = request.form['email_addr']
     gender = request.form['gender']
-    return render_template('result.html', name=name, student_number=student_number, major=major, email_id=email_id, email_addr=email_addr, gender=gender)
+    language = request.form.getlist['language']
+    return render_template('result.html', name=name, student_number=student_number, major=major, email_id=email_id, email_addr=email_addr, gender=gender, language=language)
 
 if __name__=='__main__':
     app.run(debug=True)

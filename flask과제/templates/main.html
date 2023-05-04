@@ -18,14 +18,14 @@
         
         return true;
     }
-</script>
+  </script>
 </head>
 <body>
   <form method="POST" onsubmit="return validateForm()">
         
-    <p><b>* Name</b> <input type="'text" id='name'name="name"/> </p>
-    <p><b>* Student Number</b> <input type="number" id='StudentNumber'name="sudent_number"/> </p>
-    <p><b>* Major</b> <input type="'text" id='major'name="major"/> </p>
+    <p><b>* Name</b> <input type="text" id='name'name="name"/> </p>
+    <p><b>* Student Number</b> <input type="number" id='StudentNumber'name="student_number"/> </p>
+    <p><b>* Major</b> <input type="text" id='major'name="major"/> </p>
     <p><b>* Email</b> <input type="text" id='email_id' name='email'/> @ 
       <select name='email_addr'>
         <option value="" selected>선택</option>
@@ -39,6 +39,14 @@
       <label for="female">Female</label>
       <input type="radio" id="male" name="gender" value="male">
       <label for="male">Male</label>
+    </p>
+    <p>Programming Languages<br>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="language" value="python">Python</label>
+      <label><input type="checkbox" name="language" value="java">Java</label>
+      <label><input type="checkbox" name="language" value="html">HTML</label>
+      <label><input type="checkbox" name="language" value="c++">C++</label>
+    </div>
     </p>
     <p><button type='submit' value="submit">submit</button></p>
     
