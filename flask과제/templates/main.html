@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Page</title>
+  <script>
+    function validateForm(){
+        var name=document.getElementById('name').value;
+        var StudentNumber=document.getElementById('StudentNumber').value;
+        var Major=document.getElementById('major').value;
+        var email_id=document.getElementById('email_id').value;
+        var email_addr=document.getElementById('email_addr').value;
+
+        if (!name|| !StudentNumber || !Major || !email_id|| !email_addr){
+            alert('필수 정보를 다 입력해주세요!');
+            return false;
+        }
+        
+        return true;
+    }
+</script>
+</head>
+<body>
+  <form method="POST" onsubmit="return validateForm()">
+        
+    <p><b>* Name</b> <input type="'text" id='name'name="name"/> </p>
+    <p><b>* Student Number</b> <input type="number" id='StudentNumber'name="sudent_number"/> </p>
+    <p><b>* Major</b> <input type="'text" id='major'name="major"/> </p>
+    <p><button type='submit' value="submit">submit</button></p>
+    
+</form>
+</body>
+</html>
