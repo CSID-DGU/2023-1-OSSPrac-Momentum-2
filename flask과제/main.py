@@ -11,9 +11,13 @@ def main():
 @app.route('/delete', methods=['POST'])
 def delete():
     global result_list
-    delete_idx = int(request.form.get('delete'))
-    del result_list[delete_idx]
-    return render_template('result.html', result=result_list)
+    if request.form.get('action') == 'delete':
+        delete_idx = int(request.form.get('delete'))
+        del result_list[delete_idx]
+        return render_template('result.html', result=result_list)
+    elif request.form.get('action') == 'reset':
+        result_list.clear()
+        return render_template('main.html')
 
 @app.route('/result', methods=['POST','GET'])
 def result():
