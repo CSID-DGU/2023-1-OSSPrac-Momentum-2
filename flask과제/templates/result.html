@@ -25,7 +25,11 @@
             </tr>
             {% endfor %}
         </table>
-        <p><button type="submit">Delete row</button></p>
+        <p>
+            <button type="submit" value="delete" name="action">Delete row</button>
+            <button type="button" value="button" onclick="location.href='/'">Add row</button>
+        </p>
+        <p><button type="submit" value="reset" name="action">Home</button></p>
     </form>
 </body>
 
