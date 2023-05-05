@@ -33,7 +33,10 @@ def result():
         result['Languages'] = ','.join(request.form.getlist('language'))
         result_list.append(result)
         result_list.sort(key=lambda x: x['StudentNumber'])
-        return render_template('result.html', result=result_list)
+    if not (result['Name'] and result['StudentNumber'] and result['major'] and result['email']):
+            return '<script>alert("필수 정보를 모두 입력해주세요!"); window.history.back();</script>'
+        
+    return render_template('result.html', result=result_list)
 
 if __name__=='__main__':
     app.run(debug=True, port=8002)
