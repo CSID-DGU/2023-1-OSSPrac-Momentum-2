@@ -8,19 +8,24 @@
 </head>
 
 <body>
-    <form method="POST">
+    <form method="POST" action="/delete">
         <table border='1'>
-            <thead>
-               
-            </thead>
-            <tbody>
-            
-
-            </tbody>
+            <tr>
+                {% for key in result[0] %}
+                <th>{{key}}</th>
+                {% endfor %}
+                <th></th>
+            </tr>
+            {% for i in range(result|length) %}
+            <tr>
+                {% for key, value in result[i].items() %}
+                <td>{{value}}</td>
+                {% endfor %}
+                <td><input type="checkbox" name="delete" value="{{i}}"></td>
+            </tr>
+            {% endfor %}
         </table>
-       
-
-
+        <p><button type="submit">Delete row</button></p>
     </form>
 </body>
 
