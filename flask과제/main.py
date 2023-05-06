@@ -17,7 +17,7 @@ def delete():
         return render_template('result.html', result=result_list)
     elif request.form.get('action') == 'reset':
         result_list.clear()
-        return render_template('main.html')
+        return redirect('/')
 
 @app.route('/result', methods=['POST','GET'])
 def result():
