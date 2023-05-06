@@ -21,7 +21,7 @@
                 {% for key, value in result[i].items() %}
                 <td>{{value}}</td>
                 {% endfor %}
-                <td><input type="checkbox" name="delete" value="{{i}}"></td>
+                <td><input type="checkbox" name="delete[]" value="{{i}}"></td>
             </tr>
             {% endfor %}
         </table>
