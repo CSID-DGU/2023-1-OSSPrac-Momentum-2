@@ -5,14 +5,15 @@
   <title>Main Page</title>
   <script>
     function validateForm(){
-        var name=document.getElementById('name').value;
-        var StudentNumber=document.getElementById('StudentNumber').value;
-        var Major=document.getElementById('major').value;
-        var email_id=document.getElementById('email_id').value;
-        var email_addr=document.getElementById('email_addr').value;
+      var name=document.getElementById('name').value;
+      var studentNumber=document.getElementById('StudentNumber').value;
+      var major=document.getElementById('major').value;
+      var email_id=document.getElementById('email_id').value;
+      var email_addr=document.getElementById('email_addr').value;
+
         console.log(name, StudentNumber, Major, email_addr, email_id)
         
-        if (!name|| !StudentNumber || !Major || !email_id|| !email_addr){
+        if (name==""|| StudentNumber=="" || Major=="" || email_id==""|| email_addr==""){
             alert('필수 정보를 다 입력해주세요!');
             return false;
         }
