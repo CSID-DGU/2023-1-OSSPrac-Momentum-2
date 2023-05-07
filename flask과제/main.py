@@ -16,6 +16,9 @@ def delete():
         for idx in to_delete:
             del result_list[int(idx)]
         return render_template('result.html', result=result_list)
+    elif request.form.get('action') == 'reset':
+        result_list.clear()
+        return redirect('/')
 
 @app.route('/result', methods=['POST','GET'])
 def result():
