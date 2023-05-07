@@ -31,11 +31,13 @@ def result():
         result['이메일'] = request.form.get('email') +'@'+ request.form.get('email_addr')
         result['성별'] = request.form.get('gender')
         result['프로그래밍 언어'] = ','.join(request.form.getlist('language'))
-        result_list.append(result)
-        result_list.sort(key=lambda x: x['학번'])
-    if not (result['이름'] and result['학번'] and result['전공'] and result['이메일']):
+        if (result['이름'] == "" or result['학번'] == "" or result['전공'] == "" or result['이메일'] == "@"):
             return '<script>alert("필수 정보를 모두 입력해주세요!"); window.history.back();</script>'
         
+        result_list.append(result)
+        result_list.sort(key=lambda x: x['학번'])
+        return redirect('/result')
+    
     return render_template('result.html', result=result_list)
 
 if __name__=='__main__':
