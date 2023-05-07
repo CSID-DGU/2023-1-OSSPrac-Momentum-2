@@ -5,27 +5,53 @@
   <title>Main Page</title>
   <script>
     function validateForm(){
-        var name=document.getElementById('name').value;
-        var StudentNumber=document.getElementById('StudentNumber').value;
-        var Major=document.getElementById('major').value;
-        var email_id=document.getElementById('email_id').value;
-        var email_addr=document.getElementById('email_addr').value;
+      var name=document.getElementById('name').value;
+      var studentNumber=document.getElementById('StudentNumber').value;
+      var major=document.getElementById('major').value;
+      var email_id=document.getElementById('email_id').value;
+      var email_addr=document.getElementById('email_addr').value;
 
-        if (!name|| !StudentNumber || !Major || !email_id|| !email_addr){
+        console.log(name, StudentNumber, Major, email_addr, email_id)
+        
+        if (name==""|| StudentNumber=="" || Major=="" || email_id==""|| email_addr==""){
             alert('필수 정보를 다 입력해주세요!');
             return false;
         }
         
         return true;
     }
-</script>
+  </script>
 </head>
 <body>
-  <form method="POST" onsubmit="return validateForm()">
+  <form method="POST" action="/result" onsubmit="return validateForm()">
         
-    <p><b>* Name</b> <input type="'text" id='name'name="name"/> </p>
-    <p><b>* Student Number</b> <input type="number" id='StudentNumber'name="sudent_number"/> </p>
-    <p><b>* Major</b> <input type="'text" id='major'name="major"/> </p>
+    <p><b>* Name</b> <input type="text" id='name'name="name"/> </p>
+    <p><b>* Student Number</b> <input type="number" id='StudentNumber'name="student_number"/> </p>
+    <p><b>* Major</b> <input type="text" id='major'name="major"/> </p>
+    <p><b>* Email</b> <input type="text" id='email_id' name='email'/> @ 
+      <select name='email_addr'>
+        <option value="" selected>선택</option>
+        <option value="naver.com">naver.com</option>
+        <option value="gmail.com">gmail.com</option>
+        <option value="daum.net">daum.net</option>
+      </select>
+    </p>
+    <p>Gender<br>
+    <div class="checkbox-group">
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+    </div>
+    </p>
+    <p>Programming Languages<br>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="language" value="python">Python</label>
+      <label><input type="checkbox" name="language" value="java">Java</label>
+      <label><input type="checkbox" name="language" value="html">HTML</label>
+      <label><input type="checkbox" name="language" value="c++">C++</label>
+    </div>
+    </p>
     <p><button type='submit' value="submit">submit</button></p>
     
 </form>
