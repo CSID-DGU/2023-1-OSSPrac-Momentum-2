@@ -13,8 +13,7 @@ def delete():
     global result_list
     if request.form.get('action') == 'delete':
         to_delete = request.form.getlist('delete[]')
-        for idx in to_delete:
-            del result_list[int(idx)]
+        result_list = [result_list[i] for i in range(len(result_list)) if str(i) not in to_delete]
         return render_template('result.html', result=result_list)
     elif request.form.get('action') == 'reset':
         result_list.clear()
