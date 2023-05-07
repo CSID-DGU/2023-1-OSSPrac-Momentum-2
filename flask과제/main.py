@@ -12,12 +12,10 @@ def main():
 def delete():
     global result_list
     if request.form.get('action') == 'delete':
-        delete_idx = int(request.form.get('delete'))
-        del result_list[delete_idx]
+        to_delete = request.form.getlist('delete[]')
+        for idx in to_delete:
+            del result_list[int(idx)]
         return render_template('result.html', result=result_list)
-    elif request.form.get('action') == 'reset':
-        result_list.clear()
-        return redirect('/')
 
 @app.route('/result', methods=['POST','GET'])
 def result():
