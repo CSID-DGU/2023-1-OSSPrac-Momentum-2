@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <title>result page</title>
+    
+</head>
+
+<body>
+    <form method="POST" action="/delete">
+        <table border='1'>
+            <tr>
+                {% for key in result[0] %}
+                <th>{{key}}</th>
+                {% endfor %}
+                <th></th>
+            </tr>
+            {% for i in range(result|length) %}
+            <tr>
+                {% for key, value in result[i].items() %}
+                <td>{{value}}</td>
+                {% endfor %}
+                <td><input type="checkbox" name="delete[]" value="{{i}}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            <button type="submit" value="delete" name="action">Delete row</button>
+            <button type="button" value="button" onclick="location.href='/'">Add row</button>
+        </p>
+        <p><button type="submit" value="reset" name="action">Home</button></p>
+    </form>
+</body>
+
+</html>
